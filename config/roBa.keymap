@@ -26,11 +26,19 @@
 #define SNIPE 11
 
 / {
+    cursor_move: cursor_move {
+        compatible = "zmk,behavior-input-two-axis";
+        #binding-cells= <1>;
+        x-input-code = <INPUT_REL_HWHEEL>;
+        y-input-code = <INPUT_REL_WHEEL>;
+        time-to-max-speed-ms = <0>;
+        acceleration-exponent = <0>;
+    };
     mouse_wheel: mouse_wheel {
             compatible = "zmk,behavior-sensor-rotate";
             label = "MOUSE_WHEEL";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            bindings = <&cursor_move SCRL_UP>, <&cursor_move SCRL_DOWN>;
     };
     rot_kp: sensor_rotate_kp {
             compatible = "zmk,behavior-sensor-rotate-var";
