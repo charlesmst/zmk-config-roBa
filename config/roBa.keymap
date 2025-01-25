@@ -25,10 +25,11 @@
 #define SNIPE 11
 
 / {
-    scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc MOVE_DOWN>, <&msc MOVE_UP>;
+    mouse_wheel: mouse_wheel {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            label = "MOUSE_WHEEL";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
     };
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -173,7 +174,7 @@
  &trans  &trans  &trans      MO_TOG(MOUSE)    &mo NUMBE       &hm LSHFT SPACE    &hk LSHFT RET  &mo SYMBO                         &trans
             >;
 
-            sensor-bindings = <&msc MOVE_DOWN MOVE_UP>;
+            sensor-bindings = <&mouse_wheel MOVE_DOWN MOVE_UP>;
         };
 
         windows {
@@ -184,7 +185,7 @@
 &kp Z    &kp X        &kp C       &kp V       &kp B         &trans  &trans      &kp N          &kp M       &kp COMMA   &hm RALT DOT  &hm RCTRL FSLH    
   &trans  &trans  &trans     &td_mo    &mo NUMBE       &hm LSHFT SPACE    &hk LSHFT RET  &mo SYMBO                                                              &trans
             >;
-            sensor-bindings = <&msc MOVE_DOWN MOVE_UP>;
+            sensor-bindings = <&mouse_wheel MOVE_DOWN MOVE_UP>;
         };
 
         gaming_layer {
