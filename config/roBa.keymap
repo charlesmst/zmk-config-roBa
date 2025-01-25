@@ -26,10 +26,10 @@
 
 / {
     mouse_wheel: mouse_wheel {
-            compatible = "zmk,behavior-sensor-rotate-var";
+            compatible = "zmk,behavior-sensor-rotate";
             label = "MOUSE_WHEEL";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
+            #sensor-binding-cells = <0>;
+            bindings = <&msc MOVE_DOWN>, <&msc MOVE_UP>;
     };
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -174,18 +174,18 @@
  &trans  &trans  &trans      MO_TOG(MOUSE)    &mo NUMBE       &hm LSHFT SPACE    &hk LSHFT RET  &mo SYMBO                         &trans
             >;
 
-            sensor-bindings = <&mouse_wheel MOVE_DOWN MOVE_UP>;
+            sensor-bindings = <&mouse_wheel>;
         };
 
         windows {
             label = "Win";
             bindings = <
-&kp Q    &kp W        &kp E       &kp R       &kp T                              &kp Y          &kp U       &kp I       &kp O         &kp P              
-&lt TILWI A  &hm LCTRL S  &hm LALT D  &hm LGUI F  &kp G     &trans  &trans       &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L   &lt TILWI SEMI    
-&kp Z    &kp X        &kp C       &kp V       &kp B         &trans  &trans      &kp N          &kp M       &kp COMMA   &hm RALT DOT  &hm RCTRL FSLH    
-  &trans  &trans  &trans     &td_mo    &mo NUMBE       &hm LSHFT SPACE    &hk LSHFT RET  &mo SYMBO                                                              &trans
+&kp Q    &kp W        &kp E       &kp R       &kp T                                 &kp Y          &kp U       &kp I       &kp O         &kp P              
+&lt TILWI A  &hm LCTRL S  &hm LALT D  &hm LGUI F  &kp G     &trans      &trans      &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L   &lt TILWI SEMI    
+&kp Z    &kp X        &kp C       &kp V       &kp B         &tog GAMIN  &trans      &kp N          &kp M       &kp COMMA   &hm RALT DOT  &hm RCTRL FSLH    
+  &trans  &trans  &trans     MO_TOG(MOUSE)    &mo NUMBE       &hm LSHFT SPACE    &hk LSHFT RET  &mo SYMBO                                                              &trans
             >;
-            sensor-bindings = <&mouse_wheel MOVE_DOWN MOVE_UP>;
+            sensor-bindings = <&mouse_wheel>;
         };
 
         gaming_layer {
@@ -194,7 +194,7 @@
 &kp TAB   &kp Q  &kp W  &kp E         &kp R                          &kp Y          &kp U       &kp I       &kp O         &kp P           
 &kp LCTRL &kp A  &kp S  &kp D         &kp F         &trans  &trans   &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L   &lt TILIN SEMI 
 &kp LSHFT &kp Z  &kp X  &kp C         &kp V         &trans  &trans   &kp N          &kp M       &kp COMMA   &hm RALT DOT  &hm RCTRL FSLH
-   &trans  &trans  &trans                        &td_alt  &mo LOGAM  &kp SPACE    &to WINDO  &mo SYMBO                    &trans
+   &trans  &trans  &trans                        &kp LALT  &mo LOGAM  &kp SPACE    &to WINDO  &mo SYMBO                    &trans
             >;
         };
 
