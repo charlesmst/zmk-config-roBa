@@ -1,4 +1,4 @@
-#define ZMK_MOUSE_SCRL_VAL 140
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 140 
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -30,7 +30,12 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "MOUSE_WHEEL";
             #sensor-binding-cells = <0>;
-            bindings = <&msc MOVE_DOWN>, <&msc MOVE_UP>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+    };
+    rot_kp: sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
     };
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -172,7 +177,7 @@
  &kp Q    &kp W        &kp E       &kp R       &kp T                          &kp Y          &kp U       &kp I       &kp O        &kp P          
  &lt TILIN A  &hm LCTRL S  &hm LALT D  &hm LGUI F  &kp G   &trans  &trans     &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L  &lt TILIN SEMI
  &kp Z    &kp X        &kp C       &kp V       &kp B       &trans  &trans    &kp N          &kp M       &kp COMMA   &hm RALT DOT  &hm RCTRL FSLH  
- &trans  &trans  &trans      MO_TOG(MOUSE)    &mo NUMBE       &hm LSHFT SPACE    &hk LSHFT RET  &mo SYMBO                         &trans
+ &trans  &trans  &trans      MO_TOG(MOUSE)    &mo NUMBE       &hm LSHFT SPACE    &hk LSHFT RET  &mo SYMBO                         MO_TOG(MOUSE)
             >;
 
             sensor-bindings = <&mouse_wheel>;
@@ -184,7 +189,7 @@
 &kp Q    &kp W        &kp E       &kp R       &kp T                                 &kp Y          &kp U       &kp I       &kp O         &kp P              
 &lt TILWI A  &hm LCTRL S  &hm LALT D  &hm LGUI F  &kp G     &trans      &trans      &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L   &lt TILWI SEMI    
 &kp Z    &kp X        &kp C       &kp V       &kp B         &tog GAMIN  &trans      &kp N          &kp M       &kp COMMA   &hm RALT DOT  &hm RCTRL FSLH    
-  &trans  &trans  &trans     MO_TOG(MOUSE)    &mo NUMBE       &hm LSHFT SPACE    &hk LSHFT RET  &mo SYMBO                                                              &trans
+  &trans  &trans  &trans     MO_TOG(MOUSE)    &mo NUMBE       &hm LSHFT SPACE    &hk LSHFT RET  &mo SYMBO                                MO_TOG(MOUSE)
             >;
             sensor-bindings = <&mouse_wheel>;
         };
@@ -197,6 +202,7 @@
 &kp LSHFT &kp Z  &kp X  &kp C         &kp V         &trans  &trans   &kp N          &kp M       &kp COMMA   &hm RALT DOT  &hm RCTRL FSLH
    &trans  &trans  &trans                        &kp LALT  &mo LOGAM  &kp SPACE    &to WINDO  &mo SYMBO                    &trans
             >;
+            sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
         };
 
         lower_layer {
@@ -207,6 +213,8 @@
 &mo SNIPE  &mo SCROL  &mkp MB2  &mkp MB1  &mkp MB3  &trans  &trans    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp DEL 
 &trans  &trans  &trans              &trans    &trans    &trans       &trans    &trans                            &trans  
             >;
+
+            sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
         };
 
         raise_layer {
@@ -227,6 +235,7 @@
 &trans     &trans     &kp N5    &kp T     &kp B   &trans  &trans    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp DEL 
 &trans  &trans  &trans            &kp LALT    &trans   &trans      &trans    &trans                            &trans
             >;
+
         };
 
         super_layer {
@@ -242,8 +251,8 @@
         mouse_layer {
             label = "Mouse";
             bindings = <
-&trans    &trans          &mmv MOVE_UP    &trans          &msc MOVE_DOWN                         &kp LA(LS(A))   &kp LC(UP)      &kp LA(LS(D))   &trans               &trans                
-&trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc MOVE_UP    &trans  &trans         &trans          &mkp MB4        &mkp MB5        &trans               &trans   
+&trans    &trans          &mmv MOVE_UP    &trans          &msc SCRL_DOWN                         &kp LA(LS(A))   &kp LC(UP)      &kp LA(LS(D))   &trans               &trans                
+&trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_UP    &trans  &trans         &trans          &mkp MB4        &mkp MB5        &trans               &trans   
 &mo SNIPE MO_TOG(SCROL)   &mkp MB2        &mkp MB1        &mkp MB3        &trans  &trans         &mkp MB3        &mkp MB1        &mkp MB2        MO_TOG(SCROL)        &mo SNIPE 
 &trans  &trans  &trans                                    &dmouse    &trans    &trans       &dmouse    &mkp MB1                                                       &trans   
             >;
