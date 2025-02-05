@@ -123,6 +123,7 @@
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp N1>, <&kt LGUI>;
         };
+
         w2: w2 {
             compatible = "zmk,behavior-tri-state";
             label = "WIN OPEN 2";
@@ -251,9 +252,9 @@
         default_layer {
             label = "PC";
             bindings = <
- &kp Q    &kp W        &kp E       &kp R       &kp T                                  &kp Y          &kp U       &kp I       &kp O        &kp P          
- &lt TILIN A  &hm LCTRL S  &hm LALT D  &hm LGUI F  &kp G   &trans  &kp LG(LC(SPACE))  &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L  &lt TILIN SEMI
- &kp Z    &kp X        &kp C       &kp V       &kp B       &trans  &trans             &kp N          &kp M       &kp COMMA   &hm RALT DOT  &hm RCTRL FSLH  
+ &kp Q    &kp W        &kp E       &kp R       &kp T                                          &kp Y          &kp U       &kp I       &kp O        &kp P          
+ &lt TILIN A  &hm LCTRL S  &hm LALT D  &hm LGUI F  &kp G   &kp LG(LS(N4))  &kp LG(LC(SPACE))  &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L  &lt TILIN SEMI
+ &kp Z    &kp X        &kp C       &kp V       &kp B       &trans     &trans                  &kp N          &kp M       &kp COMMA   &hm RALT DOT  &hm RCTRL FSLH  
  &trans  &trans  &trans      MO_TOG(MOUSE)    &mo NUMBE       &hm LSHFT SPACE    &hk LSHFT RET  &mo SYMBO                         MO_TOG(MOUSE)
             >;
 
@@ -264,7 +265,7 @@
             label = "Win";
             bindings = <
 &kp Q    &kp W        &kp E       &kp R       &kp T                                 &kp Y          &kp U       &kp I       &kp O         &kp P              
-&lt TILWI A  &hm LCTRL S  &hm LALT D  &hm LGUI F  &kp G     &trans      &kp LG(DOT)  &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L   &lt TILWI SEMI    
+&lt TILWI A  &hm LCTRL S  &hm LALT D  &hm LGUI F  &kp G     &kp PSCRN   &kp LG(DOT) &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L   &lt TILWI SEMI    
 &kp Z    &kp X        &kp C       &kp V       &kp B         &tog GAMIN  &trans      &kp N          &kp M       &kp COMMA   &kp DOT       &kp FSLH    
   &trans  &trans  &trans     MO_TOG(MOUSE)    &mo NUMBE       &hm LSHFT SPACE    &hk LSHFT RET  &mo SYMBO                                MO_TOG(MOUSE)
             >;
@@ -275,8 +276,8 @@
             label = "Gaming";
             bindings = <
 &kp TAB   &kp Q  &kp W  &kp E         &kp R                          &kp Y          &kp U       &kp I       &kp O         &kp P           
-&kp LCTRL &kp A  &kp S  &kp D         &kp F         &trans  &trans   &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L   &lt TILIN SEMI 
-&kp LSHFT &kp Z  &kp X  &kp C         &kp V         &trans  &trans   &kp N          &kp M       &kp COMMA   &hm RALT DOT  &hm RCTRL FSLH
+&kp LCTRL &kp A  &kp S  &kp D         &kp F         &kp PSCRN  &trans   &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L   &lt TILIN SEMI 
+&kp LSHFT &kp Z  &kp X  &kp C         &kp V         &trans     &trans   &kp N          &kp M       &kp COMMA   &hm RALT DOT  &hm RCTRL FSLH
    &trans  &trans  &trans                        &kp LALT  &mo LOGAM  &kp SPACE    &to WINDO  &mo SYMBO                    &trans
             >;
             sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
