@@ -235,6 +235,22 @@
             tap-ms = <0>;
             bindings = <&mo MOUSE>, <&mo SCROL>,  <&mo SNIPE>;
         };
+        deskhop1: deskhop1 {
+            label = "deskhop1";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&kp RC(RA(N1))>, <&to WINDO>;
+        };
+        deskhop2: deskhop2 {
+            label = "deskho2";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&kp RC(RA(N2))>, <&to DEFAU>;
+        };
     };
 
     combos {
@@ -253,9 +269,9 @@
             label = "PC";
             bindings = <
  &kp Q    &kp W        &kp E       &kp R       &kp T                                          &kp Y          &kp U       &kp I       &kp O        &kp P          
- &lt TILIN A  &hm LCTRL S  &hm LALT D  &hm LGUI F  &kp G   &kp LG(LS(N4))  &kp LG(LC(SPACE))  &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L  &lt TILIN SEMI
- &kp Z    &kp X        &kp C       &kp V       &kp B       &trans     &trans                  &kp N          &kp M       &kp COMMA   &hm RALT DOT  &hm RCTRL FSLH  
- &trans  &trans  &trans      MO_TOG(MOUSE)    &mo NUMBE       &hm LSHFT SPACE    &hk RSHFT RET  &mo SYMBO                         MO_TOG(MOUSE)
+ &lt TILIN A  &hm LCTRL S  &hm LALT D  &hm LGUI F  &kp G   &kp LG(LS(N4))  &deskhop2  &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L  &lt TILIN SEMI
+ &kp Z    &kp X        &kp C       &kp V       &kp B       &trans     &deskhop1                  &kp N          &kp M       &kp COMMA   &hm RALT DOT  &hm RCTRL FSLH  
+ &trans   &trans  &kp LG(LC(SPACE))      MO_TOG(MOUSE)    &mo NUMBE       &hm LSHFT SPACE    &hk RSHFT RET  &mo SYMBO                         MO_TOG(MOUSE)
             >;
 
             sensor-bindings = <&mouse_wheel>;
@@ -265,9 +281,9 @@
             label = "Win";
             bindings = <
 &kp Q    &kp W        &kp E       &kp R       &kp T                                 &kp Y          &kp U       &kp I       &kp O         &kp P              
-&lt TILWI A  &hm LCTRL S  &hm LALT D  &hm LGUI F  &kp G     &kp PSCRN   &kp LG(DOT) &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L   &lt TILWI SEMI    
-&kp Z    &kp X        &kp C       &kp V       &kp B         &tog GAMIN  &trans      &kp N          &kp M       &kp COMMA   &kp DOT       &kp FSLH    
-  &trans  &trans  &trans     MO_TOG(MOUSE)    &mo NUMBE       &hm LSHFT SPACE    &hk RSHFT RET  &mo SYMBO                                MO_TOG(MOUSE)
+&lt TILWI A  &hm LCTRL S  &hm LALT D  &hm LGUI F  &kp G     &kp PSCRN   &deskhop2   &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L   &lt TILWI SEMI    
+&kp Z    &kp X        &kp C       &kp V       &kp B         &tog GAMIN  &deskhop1   &kp N          &kp M       &kp COMMA   &kp DOT       &kp FSLH    
+  &trans  &trans  &kp LG(DOT)     MO_TOG(MOUSE)    &mo NUMBE       &hm LSHFT SPACE    &hk RSHFT RET  &mo SYMBO                                MO_TOG(MOUSE)
             >;
             sensor-bindings = <&mouse_wheel>;
         };
