@@ -255,7 +255,7 @@
  &kp Q    &kp W        &kp E       &kp R       &kp T                                          &kp Y          &kp U       &kp I       &kp O        &kp P          
  &lt TILIN A  &hm LCTRL S  &hm LALT D  &hm LGUI F  &kp G   &kp LG(LS(N4))  &kp LG(LC(SPACE))  &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L  &lt TILIN SEMI
  &kp Z    &kp X        &kp C       &kp V       &kp B       &trans     &trans                  &kp N          &kp M       &kp COMMA   &hm RALT DOT  &hm RCTRL FSLH  
- &trans  &trans  &trans      MO_TOG(MOUSE)    &mo NUMBE       &hm LSHFT SPACE    &hk LSHFT RET  &mo SYMBO                         MO_TOG(MOUSE)
+ &trans  &trans  &trans      MO_TOG(MOUSE)    &mo NUMBE       &hm LSHFT SPACE    &hk RSHFT RET  &mo SYMBO                         MO_TOG(MOUSE)
             >;
 
             sensor-bindings = <&mouse_wheel>;
@@ -267,7 +267,7 @@
 &kp Q    &kp W        &kp E       &kp R       &kp T                                 &kp Y          &kp U       &kp I       &kp O         &kp P              
 &lt TILWI A  &hm LCTRL S  &hm LALT D  &hm LGUI F  &kp G     &kp PSCRN   &kp LG(DOT) &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L   &lt TILWI SEMI    
 &kp Z    &kp X        &kp C       &kp V       &kp B         &tog GAMIN  &trans      &kp N          &kp M       &kp COMMA   &kp DOT       &kp FSLH    
-  &trans  &trans  &trans     MO_TOG(MOUSE)    &mo NUMBE       &hm LSHFT SPACE    &hk LSHFT RET  &mo SYMBO                                MO_TOG(MOUSE)
+  &trans  &trans  &trans     MO_TOG(MOUSE)    &mo NUMBE       &hm LSHFT SPACE    &hk RSHFT RET  &mo SYMBO                                MO_TOG(MOUSE)
             >;
             sensor-bindings = <&mouse_wheel>;
         };
