@@ -301,8 +301,8 @@
             bindings = <
 &kp TAB   &kp Q  &kp W  &kp E         &kp R                          &kp Y          &kp U       &kp I       &kp O         &kp P           
 &kp LCTRL &kp A  &kp S  &kp D         &kp F         &kp PSCRN  &trans   &kp H          &hm LGUI J  &hm RALT K  &hm RCTRL L   &lt TILIN SEMI 
-&kp LSHFT &kp Z  &kp X  &kp C         &kp V         &trans     &trans   &kp N          &kp M       &kp COMMA   &hm RALT DOT  &hm RCTRL FSLH
-   &trans  &trans  &trans                        &kp LALT  &mo LOGAM  &kp SPACE    &to WINDO  &mo SYMBO                    &trans
+&kp LSHFT &kp Z  &kp X  &kp C         &kp V         &kp B     &trans   &kp N          &kp M       &kp COMMA   &hm RALT DOT  &hm RCTRL FSLH
+   &trans  &tog GAMIN  &trans                        &kp LALT  &mo LOGAM  &kp SPACE    &to WINDO  &mo SYMBO                    &trans
             >;
             sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
         };
