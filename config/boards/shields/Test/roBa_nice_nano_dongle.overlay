@@ -79,11 +79,10 @@ xiao_d: &pro_micro {};
 
 &trackball_listener {
     status = "okay";
-    input-processors = <&sigmoid_accel>;
 
     scroll {
         layers = <10>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,  <&zip_xy_to_scroll_mapper>,<&sigmoid_accel>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,  <&zip_xy_to_scroll_mapper>;
     };
 
     snipe {
